@@ -1,0 +1,30 @@
+#!/bin/bash
+
+PATH=/usr/sbin:/usr/bin:/sbin:/bin
+DESC=ShoutCast Server
+NAME=sc_serv
+
+case "$1" in
+ 'start')
+	echo "Start Shoutcast stream..."
+	cd /shoutcast/ && ./$NAME &
+	echo "Shoutcast stream is started! (by Vujca) :)"
+	;;
+ 'stop')
+	echo "Stopping Shoutcast stream..."
+	killall $NAME
+	echo "Shoutcast stream is stopped! (by Vujca) :)"
+	;;
+ 'restart')
+	echo "Restart Shoutcast stream..."
+	killall $NAME
+	cd /shotucast/ && ./$NAME &
+	echo "Shoutcast stream is restarted! (by Vujca) :)"
+	;;
+*)
+	echo "Usage: $0 { start | stop | restart }"
+	;;
+
+esac
+exit 0
+

@@ -2,20 +2,17 @@
 
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+Shoutcast V2 Install linux package version's
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+| Version | OS                   | Supported OS       | 
+| ------- | -------------------- | ------------------ |
+| 1.1.x   | Ubuntu 16.04 LTS     | :heavy_check_mark: |
+|         | Ubuntu 18.04 LTS     | :heavy_check_mark: |
+|         | Ubuntu 16.04 Desktop | :heavy_check_mark: |
+|         | Ubuntu 16.04 Desktop | :heavy_check_mark: |
+|         | Debian 8 Jessie      | :heavy_check_mark: |
+|         | Debian 9 Stretch     | :heavy_check_mark: |
+|         | Debian 10 Buster     | :heavy_check_mark: |
+| 1.0.x   | :x:                  |                    |
 
 ## Reporting a Vulnerability
-
-Use this section to tell people how to report a vulnerability.
-
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.

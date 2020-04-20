@@ -1,0 +1,51 @@
+#!/bin/bash
+
+#Install Shoutcast
+echo "Install shoutcast..."
+echo "Script by TomeksDEV (by Vujca)!"
+NAMEC=sc_serv
+NAMES=shoutcast
+echo "Download Shoutcast server..."
+cd /
+mkdir shoutcast
+cd /shoutcast/
+wget http://download.nullsoft.com/shoutcast/tools/sc_serv2_linux_x64-latest.tar.gz
+echo "Extract and copy all files..."
+tar xfz sc_serv2_linux_x64-latest.tar.gz
+rm sc_serv2_linux_x64-latest.tar.gz
+echo "Create control and log folders..."
+#mkdir control && mkdir logs
+
+#Create sc_serv config file
+echo "Create sc_serv.conf..."
+read -sp "Enter admin password: " pass1
+echo ""
+read -sp "Enter password(!DIFIRENT): " pass2
+echo ""
+read -sp "Enter stream admin password: " pass3
+echo ""
+read -sp "Enter stream password: " pass4
+echo ""
+read -p "Enter server IP: " serverIP
+echo ""
+printf "adminpassword=$pass1\npassword=$pass2\nrequirestreamconfigs=1\nstreamadminpassword_1=$pass3\nstreamid_1=1\nstreampassword_1=$pass4\nstreampath_1=http://$serverIP:8000\nlogfile=logs/sc_serv.log\nw3clog=logs/sc_w3c.log\nbanfile=control/sc_serv.ban\nripfile=control/sc_serv.rip" > /shoutcast/sc_serv.conf
+
+chmod +x sc_serv
+echo "Downloading DDNAS certificate..."
+cd /shoutcast/
+wget http://curl.haxx.se/ca/cacert.pem
+
+#Create shoutcast command
+echo "Create shoutcast command..."
+cd /shoutcast/
+wget https://github.com/tomeksdev/tomeksdev.github.io/raw/master/tools/linux/shoutcast-cmd.tar.gz
+tar xfz shoutcast-cmd.tar.gz
+echo "Copy command for auto start on boot..."
+cp /shoutcast/shoutcast /etc/init.d/
+
+rm /shoutcast/shoutcast
+
+cp /etc/init.d/shoutcast /etc/rc3.d/S08shoutcast
+cp /etc/init.d/shoutcast /usr/bin
+chmod 777 /usr/bin/shoutcast
+echo "Installation completed! (by Vujca - TomeksDEV)"
