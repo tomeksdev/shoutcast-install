@@ -1,9 +1,9 @@
-#How to contribute
+# How to contribute
 Thanks for your interest in contributing to the Shoutcast Install project! This is an open source project, so we like to keep things fun. It should go without saying that you please be friendly and respectful of other people's ideas. Let's not make this project feel like a job!
 
 We also have a few guidelines on getting started and how to contribute:
 
-##Coding Guidelines
+## Coding Guidelines
 - Make sure all code is properly indented with tabs and commented thoroughly
 - Spend some quality time testing your code
 
